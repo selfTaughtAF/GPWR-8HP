@@ -2,6 +2,8 @@
   const content = window.SITE_CONTENT;
   if (!content) return;
 
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+
   const asset = (filename) => `./assets/parts/${filename}`;
   const esc = (value) => {
     const el = document.createElement("span");
@@ -206,17 +208,26 @@
       else el.textContent = studioAddress || intro || "";
     });
 
-    document.querySelectorAll("[data-contact-hours-weekdays]").forEach((el) => {
-      if (hoursWeekdays) el.textContent = hoursWeekdays;
-    });
+    const hoursLines = [
+      hoursWeekdays || "Mon–Fri 08:00–18:00",
+      hoursSaturday || "Saturday by appointment",
+      hoursSunday || "Sunday closed",
+    ].filter((line) => String(line).trim());
 
-    document.querySelectorAll("[data-contact-hours-saturday]").forEach((el) => {
-      if (hoursSaturday) el.textContent = hoursSaturday;
-    });
+    const hoursHtml = hoursLines.map((line) => `<span>${esc(line)}</span>`).join("<br />");
+    const hoursTargets = $$("[data-contact-hours]");
 
-    document.querySelectorAll("[data-contact-hours-sunday]").forEach((el) => {
-      if (hoursSunday) el.textContent = hoursSunday;
-    });
+    if (hoursTargets.length) {
+      hoursTargets.forEach((el) => {
+        el.innerHTML = hoursHtml;
+      });
+    } else {
+      $$(".footer-label").forEach((label) => {
+        if (label.textContent?.trim().toLowerCase() !== "hours") return;
+        const paragraph = label.nextElementSibling;
+        if (paragraph?.tagName === "P") paragraph.innerHTML = hoursHtml;
+      });
+    }
 
     const heroImg = document.querySelector("[data-hero-image]");
     if (heroImg && heroImage) {
