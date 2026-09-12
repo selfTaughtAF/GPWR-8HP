@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaijin Power — 8HP Swap Parts &amp; Kits</title>
+    <meta
+      name="description"
+      content="Gaijin Power supplies Domiworks 8HP swap kits, Turbolamik controllers, shifters, and accessories for Japanese performance platforms. Configure your kit online."
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="pattern pattern-seigaiha" aria-hidden="true"></div>
+    <div class="blossom-layer" data-blossom-layer aria-hidden="true"></div>
+
+    <div class="site-modal promo-modal" data-promo-modal hidden role="dialog" aria-modal="true" aria-labelledby="promo-title">
+      <div class="site-modal-backdrop" data-promo-close></div>
+      <div class="site-modal-card">
+        <button class="site-modal-close" type="button" data-promo-close aria-label="Close offer">&times;</button>
+        <div data-promo-offer>
+          <p class="eyebrow">Mailing list · メール</p>
+          <h2 id="promo-title" data-promo-title>10% off your first 8HP order</h2>
+          <p data-promo-description>Join the Gaijin Power list for swap tips, restock alerts, and an exclusive discount code.</p>
+          <form class="promo-form" data-promo-form novalidate>
+            <label class="sr-only" for="promo-email">Email address</label>
+            <input id="promo-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+            <button class="btn btn-accent btn-block" type="submit">Get my discount code</button>
+          </form>
+          <button class="promo-skip" type="button" data-promo-close>No thanks</button>
+        </div>
+        <div class="promo-success" data-promo-success hidden>
+          <p class="eyebrow">You're on the list</p>
+          <h2>Your code</h2>
+          <p class="promo-code" data-promo-code>SAKURA8HP</p>
+          <p>Use at checkout or mention it when you email your configurator build.</p>
+          <button class="btn btn-accent btn-block" type="button" data-promo-close>Continue browsing</button>
+        </div>
+        <p class="promo-status" data-promo-status role="status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="site-modal config-modal" data-config-modal hidden role="dialog" aria-modal="true" aria-labelledby="config-modal-title">
+      <div class="site-modal-backdrop" data-config-close></div>
+      <div class="site-modal-card">
+        <button class="site-modal-close" type="button" data-config-close aria-label="Close build sheet form">&times;</button>
+        <p class="eyebrow">Build sheet · 構成表</p>
+        <h2 id="config-modal-title">Send your build sheet</h2>
+        <p>Enter your contact details and we will receive your kit configuration for pricing and availability.</p>
+        <div class="config-modal-summary" data-config-modal-summary hidden>
+          <p class="config-modal-summary-label">Your selection</p>
+          <ul>
+            <li><span>Vehicle kit</span><strong data-config-modal-car>—</strong></li>
+            <li><span>Controller</span><strong data-config-modal-controller>—</strong></li>
+            <li><span>Shifter</span><strong data-config-modal-shifter>—</strong></li>
+            <li><span>Accessories</span><strong data-config-modal-accessories>—</strong></li>
+          </ul>
+        </div>
+        <form class="config-modal-form lead-form" data-config-form novalidate>
+          <div class="field">
+            <label for="config-name">Name</label>
+            <input id="config-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="config-email">Email</label>
+              <input id="config-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="config-phone">Phone</label>
+              <input id="config-phone" name="phone" type="tel" autocomplete="tel" placeholder="Optional" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="config-notes">Notes</label>
+            <textarea id="config-notes" name="notes" rows="3" placeholder="Vehicle details, timeline, or questions (optional)"></textarea>
+          </div>
+          <button class="btn btn-accent btn-block" type="submit">Send build sheet</button>
+        </form>
+        <p class="config-modal-status" data-config-status role="status" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="logo" href="#top" aria-label="Gaijin Power home">
+          <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <circle cx="20" cy="20" r="11" />
+            <path d="M20 8 L20 32 M8 20 L32 20" />
+          </svg>
+          <span>
+            <strong>Gaijin</strong>
+            <small>Power · 8HP</small>
+          </span>
+        </a>
+
+        <nav class="nav" data-nav aria-label="Primary">
+          <a href="#guide">Gearbox Guide</a>
+          <a href="#parts">Parts</a>
+          <a href="#configurator">Configurator</a>
+          <a href="#consult">Build Consult</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <a class="btn btn-ghost header-phone" href="tel:+442079460182" data-contact-phone>+44 20 7946 0182</a>
+          <a class="btn btn-accent" href="#configurator">Configure kit</a>
+          <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-nav">
+            <span class="sr-only">Open menu</span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav" data-mobile-nav hidden>
+      <a href="#guide">Gearbox Guide</a>
+      <a href="#parts">Parts</a>
+      <a href="#configurator">Configurator</a>
+      <a href="#consult">Build Consult</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-accent" href="#configurator">Configure kit</a>
+    </div>
+
+    <main id="top">
+      <section class="hero">
+        <p class="hero-kanji" aria-hidden="true">変速</p>
+        <div class="hero-panel">
+          <div class="container hero-content">
+            <p class="eyebrow">Domiworks · Turbolamik · JDM platforms</p>
+            <h1>
+              8HP swap
+              <span>parts &amp; programmes.</span>
+            </h1>
+            <p class="hero-lead">
+              Gaijin Power specialises in ZF 8HP gearbox conversions for Japanese
+              performance cars. Supply kits, controllers, shifters, and accessories —
+              or book a build consultation for a full swap programme.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-accent btn-lg" href="#configurator">Start 8HP configurator</a>
+              <a class="btn btn-outline btn-lg" href="#parts">Browse parts</a>
+            </div>
+            <ul class="hero-points">
+              <li>Domiworks vehicle kits</li>
+              <li>Turbolamik TCU calibration</li>
+              <li>Build consultations by email</li>
+            </ul>
+          </div>
+          <figure class="hero-product">
+            <img data-hero-image src="./assets/parts/kit-2jz.webp" alt="Domiworks 2JZ to 8HP adapter kit" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section guide" id="guide">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">8HP Gearbox Guide · ガイド</p>
+            <h2>Choose the right 8HP for your power target.</h2>
+            <p>Match gearbox capacity to engine output before you configure your kit.</p>
+          </div>
+          <div class="guide-grid" data-guide-grid></div>
+        </div>
+      </section>
+
+      <section class="section parts" id="parts">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Parts catalogue · 部品</p>
+            <h2>Domiworks kits &amp; 8HP hardware.</h2>
+            <p>Vehicle kits, controllers, shifters, and accessories — available individually or via the configurator.</p>
+          </div>
+
+          <div class="parts-group reveal">
+            <h3>Vehicle kits</h3>
+            <div class="parts-grid" data-parts-kits></div>
+          </div>
+
+          <div class="parts-group reveal">
+            <h3>Controllers &amp; shifters</h3>
+            <div class="parts-grid parts-grid-3" data-parts-hardware></div>
+          </div>
+
+          <div class="parts-group reveal">
+            <h3>Accessories</h3>
+            <div class="parts-grid parts-grid-3" data-parts-accessories></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section configurator" id="configurator">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">8HP Kit Configurator · 構成</p>
+            <h2>Build your kit. Email the specification.</h2>
+            <p>Select your platform, controller, shifter, and accessories — then send the configuration directly to our inbox.</p>
+          </div>
+
+          <div class="configurator-board reveal" data-configurator>
+            <ol class="config-steps" data-config-steps role="tablist" aria-label="Configurator steps">
+              <li role="presentation">
+                <button type="button" class="config-step-btn is-active" data-step-jump="1" role="tab" aria-selected="true" aria-controls="config-panel-1" id="config-tab-1">Car</button>
+              </li>
+              <li role="presentation">
+                <button type="button" class="config-step-btn" data-step-jump="2" role="tab" aria-selected="false" aria-controls="config-panel-2" id="config-tab-2">Controller</button>
+              </li>
+              <li role="presentation">
+                <button type="button" class="config-step-btn" data-step-jump="3" role="tab" aria-selected="false" aria-controls="config-panel-3" id="config-tab-3">Shifter</button>
+              </li>
+              <li role="presentation">
+                <button type="button" class="config-step-btn" data-step-jump="4" role="tab" aria-selected="false" aria-controls="config-panel-4" id="config-tab-4">Accessories</button>
+              </li>
+            </ol>
+
+            <div class="config-layout">
+              <div class="config-main">
+                <section class="config-panel is-active" data-panel="1" id="config-panel-1" role="tabpanel" aria-labelledby="config-tab-1">
+                  <h3>Select your car</h3>
+                  <div class="option-grid" data-config-cars></div>
+                </section>
+
+                <section class="config-panel" data-panel="2" id="config-panel-2" role="tabpanel" aria-labelledby="config-tab-2">
+                  <h3>Select your controller</h3>
+                  <div class="option-grid" data-config-controllers></div>
+                </section>
+
+                <section class="config-panel" data-panel="3" id="config-panel-3" role="tabpanel" aria-labelledby="config-tab-3">
+                  <h3>Select your shifter</h3>
+                  <div class="option-grid" data-config-shifters></div>
+                </section>
+
+                <section class="config-panel" data-panel="4" id="config-panel-4" role="tabpanel" aria-labelledby="config-tab-4">
+                  <h3>Select your accessories</h3>
+                  <div class="accessory-grid" data-config-accessories></div>
+                </section>
+
+                <div class="config-nav">
+                  <button class="btn btn-outline" type="button" data-config-back hidden>Back</button>
+                  <button class="btn btn-accent" type="button" data-config-next>Next step</button>
+                </div>
+              </div>
+
+              <aside class="config-summary">
+                <p class="eyebrow">Your configuration</p>
+                <div class="summary-preview">
+                  <img data-summary-image src="./assets/parts/kit-2jz.webp" alt="Selected kit preview" />
+                </div>
+                <ul class="summary-list" data-summary-list>
+                  <li><span>Vehicle kit</span><strong data-summary-car>Not selected</strong></li>
+                  <li><span>Controller</span><strong data-summary-controller>Turbolamik Controller</strong></li>
+                  <li><span>Shifter</span><strong data-summary-shifter>Not selected</strong></li>
+                  <li><span>Accessories</span><strong data-summary-accessories>None</strong></li>
+                </ul>
+                <p class="summary-note">Pricing is quoted after review. Send your build sheet and we will reply with availability and lead times.</p>
+                <button class="btn btn-accent btn-block" type="button" data-config-open>Request build sheet</button>
+                <a class="btn btn-outline btn-block" href="#consult">Book a build consultation</a>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section consult" id="consult">
+        <div class="container split">
+          <div class="reveal">
+            <p class="eyebrow">Build consultation · 相談</p>
+            <h2>Full 8HP swap programme?</h2>
+            <p class="lede">
+              Supply-only is not always the answer. If you want Gaijin Power to
+              manage the complete gearbox conversion — planning, parts, calibration,
+              and handover — send a build consultation request by email.
+            </p>
+            <ul class="consult-list">
+              <li>Platform assessment &amp; gearbox selection</li>
+              <li>Domiworks kit supply &amp; installation planning</li>
+              <li>Turbolamik calibration &amp; shakedown</li>
+            </ul>
+          </div>
+          <form class="lead-form reveal" data-consult-form novalidate>
+            <div class="field">
+              <label for="consult-name">Name</label>
+              <input id="consult-name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="consult-email">Email</label>
+                <input id="consult-email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="consult-phone">Phone</label>
+                <input id="consult-phone" name="phone" type="tel" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="consult-vehicle">Vehicle</label>
+              <input id="consult-vehicle" name="vehicle" type="text" placeholder="e.g. 1999 Toyota Aristo V300" required />
+            </div>
+            <div class="field">
+              <label for="consult-power">Power target &amp; use</label>
+              <input id="consult-power" name="power" type="text" placeholder="e.g. 550 bhp street / 750 Nm" required />
+            </div>
+            <div class="field">
+              <label for="consult-notes">Notes</label>
+              <textarea id="consult-notes" name="notes" rows="4" placeholder="Gearbox choice, timeline, supply vs full build…"></textarea>
+            </div>
+            <button class="btn btn-accent btn-lg" type="submit">Email build consultation request</button>
+            <p class="form-status" data-consult-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="container narrow reveal">
+          <p class="eyebrow">Contact · 連絡</p>
+          <h2>Parts enquiries &amp; general contact.</h2>
+          <p>For kit availability, shipping, and technical questions — email or call the studio directly.</p>
+          <ul class="contact-points">
+            <li><a href="mailto:studio@gaijinpower.co.uk" data-contact-email>studio@gaijinpower.co.uk</a></li>
+            <li><a href="tel:+442079460182" data-contact-phone>+44 20 7946 0182</a></li>
+            <li data-contact-address>Unit 4, The Foundry, Park Royal, London NW10</li>
+          </ul>
+          <form class="lead-form contact-inline" data-contact-form novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" name="name" type="text" required />
+              </div>
+              <div class="field">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" name="email" type="email" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="4" required></textarea>
+            </div>
+            <button class="btn btn-outline" type="submit">Email enquiry</button>
+            <p class="form-status" data-contact-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="logo" href="#top">
+            <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+              <circle cx="20" cy="20" r="11" />
+              <path d="M20 8 L20 32 M8 20 L32 20" />
+            </svg>
+            <span>
+              <strong>Gaijin</strong>
+              <small>Power · 8HP</small>
+            </span>
+          </a>
+          <p>8HP swap parts, kits, and build consultations. Park Royal, London.</p>
+        </div>
+        <div>
+          <p class="footer-label">Parts</p>
+          <p>Domiworks kits<br />Turbolamik controllers<br />Shifters &amp; accessories</p>
+        </div>
+        <div>
+          <p class="footer-label">Studio</p>
+          <p><a href="mailto:studio@gaijinpower.co.uk" data-contact-email>studio@gaijinpower.co.uk</a><br /><a href="tel:+442079460182" data-contact-phone>+44 20 7946 0182</a></p>
+        </div>
+        <div>
+          <p class="footer-label">Hours</p>
+          <p>Mon–Fri 08:00–18:00<br />Saturday by appointment</p>
+        </div>
+      </div>
+      <div class="container footer-base">
+        <p>© <span data-year></span> Gaijin Power. All rights reserved.</p>
+        <p><button class="footer-link" type="button" data-promo-open>Join mailing list for 10% off</button></p>
+      </div>
+    </footer>
+
+    <script src="./js/site-content.js"></script>
+    <script src="./js/site-render.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
