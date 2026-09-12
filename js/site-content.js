@@ -1,9 +1,11 @@
 window.SITE_CONTENT = {
   "settings": {
     "footerIntro": "8HP swap parts, kits, and build consultations.",
-    "hoursWeekdays": "Mon–Fri 00:00–06:00",
+    "hoursWeekdays": "Mon–Fri 08:00–18:00",
     "hoursSaturday": "Saturday by appointment",
     "hoursSunday": "Sunday closed",
+    "siteGateEnabled": true,
+    "siteGatePassword": "gaijin8hp",
     "leadEmail": "test@test.com",
     "phone": "+440000000000",
     "phoneLink": "+440000000000",
